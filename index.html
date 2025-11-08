@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html data-theme="theme-1" class="h-full min-w-[375px]" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Calculator</title>
+    <script defer src="./app.js"></script>
+  </head>
+  <body
+    class="bg-page grid place-items-center h-screen transition-colors duration-300 ease-in-out"
+  >
+    <main class="space-y-6 max-w-[540px] mx-7 pt-13">
+      <!-- theme -->
+      <div class="flex mx-auto md:w-full items-center justify-between">
+        <span class="text-3 text-center pt-5 text-display">calc</span>
+        <div class="flex justify-center items-end gap-x-4">
+          <span
+           id="theme" class=" text-6 flex justify-center items-center text-display py-1 cursor-pointer"
+            >THEME</span
+          >
+
+          <div>
+            <div
+              aria-hidden="true"
+              class="flex w-min items-center justify-center gap-x-4 px-2"
+            >
+              <span
+                id="num1"
+                class="selector cursor-pointer text-7 my-1 text-display"
+                >1</span
+              >
+              <span
+                id="num2"
+                class="selector cursor-pointer text-7 my-1 text-display"
+                >2</span
+              >
+              <span
+                id="num3"
+                class="selector cursor-pointer text-7 my-1 text-display"
+                >3</span
+              >
+            </div>
+
+            <div
+              role="radiogroup"
+              aria-label="Switch modes"
+              class="bg-keys relative flex h-[26px] w-[68px] items-center justify-center gap-3 rounded-full px-4 py-1"
+            >
+              <button
+                id="theme-1"
+                role="radio"
+                aria-checked="true"
+                aria-label="Mode 1"
+                class="selector cursor-pointer text-transparent"
+              >
+                1
+              </button>
+              <button
+                id="theme-2"
+                role="radio"
+                aria-checked="false"
+                aria-label="Mode 2"
+                class="selector cursor-pointer text-transparent"
+              >
+                2
+              </button>
+              <button
+                id="theme-3"
+                role="radio"
+                aria-checked="false"
+                aria-label="Mode 3"
+                class="selector cursor-pointer text-transparent"
+              >
+                3
+              </button>
+
+              <div
+                id="dot"
+                aria-hidden="true"
+                class="absolute left-[4px] h-4 w-4 rounded-full bg-dot transition-all"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- display -->
+      <div
+        id="display"
+        class="p-4 mx-auto h-[5.5rem] md:h-32 text-1 flex flex-col justify-end text-display md:w-full bg-bg-display rounded-[0.625rem]"
+      >
+        <div
+          id="smallDisplay"
+          class="text-right px-6 md:pb-1 text-display text-sm opacity-70"
+        ></div>
+        <div
+          id="largeDisplay"
+          class="text-right px-5 md:pb-4 text-display text-1 font-bold"
+        >
+          399,981
+        </div>
+      </div>
+      <!-- buttons -->
+      <div
+        id="keys"
+        class="p-4 md:p-8 bg-keys h-[480px] rounded-[0.625rem] grid grid-cols-[repeat(4,minmax(0,101px))] md:grid-cols-[repeat(4,101px)] grid-rows-[repeat(5,64px)] gap-4 md:gap-6 justify-items-center"
+      >
+        <button id="btn" class="button text-2">7</button>
+        <button id="btn" class="button text-2">8</button>
+        <button id="btn" class="button text-2">9</button>
+        <button id="btn" class="button-2 text-4">DEL</button>
+        <button id="btn" class="button text-2">4</button>
+        <button id="btn" class="button text-2">5</button>
+        <button id="btn" class="button text-2">6</button>
+        <button id="btn" class="button text-2">+</button>
+        <button id="btn" class="button text-2">1</button>
+        <button id="btn" class="button text-2">2</button>
+        <button id="btn" class="button text-2">3</button>
+        <button id="btn" class="button text-2">-</button>
+        <button id="btn" class="button text-2">.</button>
+        <button id="btn" class="button text-2">0</button>
+        <button id="btn" class="button text-2">&divide;</button>
+        <button id="btn" class="button text-2">&times;</button>
+        <button id="btn" class="button-2 !w-full col-span-2 text-4">
+          RESET
+        </button>
+        <button id="btn" class="button-3 !w-full col-span-2 text-4">=</button>
+      </div>
+    </main>
+  </body>
+</html>

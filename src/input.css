@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "League Spartan";
+  src: url("./assets/Fonts/static/LeagueSpartan-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  --font-Red-Hat-Text: "League Spartan";
+  --breakpoint-*: initial;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1280px;
+  /* Easing */
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer utilities {
+  .text-1 {
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: -0.04375rem;
+    font-family: var(--font-League-Spartan, "League Spartan", monospace);
+    font-weight: 700;
+  }
+  @media (min-width: 1280px) {
+    .text-1 {
+      font-size: 3.5rem;
+      line-height: 1;
+      letter-spacing: -0.0625rem;
+    }
+  }
+  .text-2 {
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: -0.03125rem;
+    font-family: var(--font-League-Spartan, "League Spartan", monospace);
+    font-weight: 700;
+  }
+  @media (min-width: 1280px) {
+    .text-2 {
+      font-size: 2.5rem;
+      line-height: 1;
+      letter-spacing: -0.04375rem;
+    }
+  }
+
+  .text-3 {
+    font-size: 1.75rem;
+    line-height: 1;
+    letter-spacing: -0.04375rem;
+
+    font-family: var(--font-League-Spartan, "League Spartan", monospace);
+    font-weight: 700;
+  }
+  @media (min-width: 1280px) {
+    .text-3 {
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.03125rem;
+    }
+  }
+  .text-4 {
+    font-size: 1.25rem;
+    line-height: 1;
+    letter-spacing: -0.01875rem;
+
+    font-family: var(--font-League-Spartan, "League Spartan", monospace);
+    font-weight: 700;
+  }
+  @media (min-width: 1280px) {
+    .text-4 {
+      font-size: 1.75rem;
+      line-height: 1;
+      letter-spacing: -0.04375rem;
+    }
+  }
+  .text-5 {
+    font-size: 1.25rem;
+    line-height: 1;
+    letter-spacing: -0.01875rem;
+    font-family: var(--font-League-Spartan, "League Spartan", monospace);
+    font-weight: 700;
+  }
+  .text-6 {
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0.0625rem;
+    font-family: var(--font-League-Spartan, "League Spartan", monospace);
+    font-weight: 700;
+  }
+  .text-7 {
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0;
+    font-family: var(--font-League-Spartan, "League Spartan", monospace);
+    font-weight: 700;
+  }
+}
+
+@theme {
+  /* default */
+  --shadow-button: rgba(179, 164, 151, 1);
+  --shadow-button2: rgba(65, 78, 115, 1);
+  --shadow-button3: rgba(147, 38, 26, 1);
+}
+
+[data-theme="theme-1"] {
+  --shadow-button: rgba(179, 164, 151, 1);
+  --shadow-button2: rgba(65, 78, 115, 1);
+  --shadow-button3: rgba(147, 38, 26, 1);
+}
+
+[data-theme="theme-2"] {
+  --shadow-button: rgba(167, 158, 145, 1);
+  --shadow-button2: rgba(27, 96, 102, 1);
+  --shadow-button3: rgba(135, 57, 1, 1);
+}
+
+[data-theme="theme-3"] {
+  --shadow-button: rgba(136, 28, 158, 1);
+  --shadow-button2: rgba(190, 21, 244, 1);
+  --shadow-button3: rgba(108, 249, 241, 1);
+}
+
+@layer utilities {
+  .button {
+    @apply cursor-pointer w-full p-2 flex justify-center items-center  bg-btn-primary hover:bg-btn-primary-hover text-number-btn
+  rounded-[0.3125rem]
+  shadow-[inset_0_-4px_0px_var(--shadow-button)]
+  active:shadow-none active:translate-y-[2px]
+  transition-all duration-100;
+  }
+
+  .button-2 {
+    @apply cursor-pointer w-full p-2 flex justify-center items-center  bg-btn-edit-bg hover:bg-btn-edit-bg-hover text-edit-btn
+  rounded-[0.3125rem]
+  shadow-[inset_0_-4px_0px_var(--shadow-button2)]
+  active:shadow-none active:translate-y-[2px] 
+  transition-all duration-100 ease-out;
+  }
+
+  .button-3 {
+    @apply cursor-pointer w-full p-2 flex justify-center items-center  bg-btn-equal-bg hover:bg-btn-equal-bg-hover text-equal-btn
+  rounded-[0.3125rem]
+  shadow-[inset_0_-4px_0px_var(--shadow-button3)]
+  active:shadow-none active:translate-y-[2px] 
+  transition-all duration-100 ease-out;
+  }
+}
+
+@custom-variant theme-1 (&:where([data-theme="theme-1"] *));
+@custom-variant theme-2 (&:where([data-theme="theme-2"] *));
+@custom-variant theme-3 (&:where([data-theme="theme-3"] *));
+
+@theme {
+  /* default */
+  /* bg-color */
+  --color-page: #3a4663;
+  --color-bg-display: #181f33;
+  --color-keys: #242d44;
+  /* text-colors */
+  --color-number-btn: #434a59;
+  --color-edit-btn: #ffffff;
+  --color-equal-btn: #ffffff;
+  --color-display: #ffffff;
+  /* btn-bg-colors */
+  --color-btn-primary: #e6e6e6;
+  --color-btn-primary-hover: #ffffff;
+  --color-btn-edit-bg: #647198;
+  --color-btn-edit-bg-hover: #a2b2e1;
+  --color-btn-equal-bg: #d03f2f;
+  --color-btn-equal-bg-hover: #f96b5b;
+  /* dot-colors */
+  --color-dot: #d03f2f;
+}
+
+[data-theme="theme-1"] {
+  /* bg-color */
+  --color-page: #3a4663;
+  --color-bg-display: #181f33;
+  --color-keys: #242d44;
+  /* text-colors */
+  --color-number-btn: #434a59;
+  --color-edit-btn: #ffffff;
+  --color-equal-btn: #ffffff;
+  --color-display: #ffffff;
+  /* btn-bg-colors */
+  --color-btn-primary: #e6e6e6;
+  --color-btn-primary-hover: #ffffff;
+  --color-btn-edit-bg: #647198;
+  --color-btn-edit-bg-hover: #a2b2e1;
+  --color-btn-equal-bg: #d03f2f;
+  --color-btn-equal-bg-hover: #f96b5b;
+  /* dot-colors */
+  --color-dot: #d03f2f;
+}
+[data-theme="theme-2"] {
+  /* bg-color */
+  --color-page: #e6e6e6;
+  --color-bg-display: #eeeeee;
+  --color-keys: #d2cdcd;
+  /* text-colors */
+  --color-number-btn: #36362c;
+  --color-edit-btn: #ffffff;
+  --color-equal-btn: #ffffff;
+  --color-display: #36362c;
+  /* btn-bg-colors */
+  --color-btn-primary: #e6e6e6;
+  --color-btn-primary-hover: #ffffff;
+  --color-btn-edit-bg: #378187;
+  --color-btn-edit-bg-hover: #62b5bc;
+  --color-btn-equal-bg: #c85402;
+  --color-btn-equal-bg-hover: #ff8a38;
+  /* dot-colors */
+  --color-dot: #c85402;
+}
+
+[data-theme="theme-3"] {
+  /* bg-color */
+  --color-page: #17062a;
+  --color-bg-display: #1e0936;
+  --color-keys: #1e0936;
+  /* text-colors */
+  --color-number-btn: #ffe53d;
+  --color-edit-btn: #ffffff;
+  --color-equal-btn: #1a2327;
+  --color-display: #ffe53d;
+  /* btn-bg-colors */
+  --color-btn-primary: #331c4d;
+  --color-btn-primary-hover: #6c34ac;
+  --color-btn-edit-bg: #56077c;
+  --color-btn-edit-bg-hover: #8631af;
+  --color-btn-equal-bg: #00ded0;
+  --color-btn-equal-bg-hover: #93fff8;
+  /* dot-colors */
+  --color-dot: #00ded0;
+}
