@@ -306,6 +306,9 @@
   .gap-x-4 {
     column-gap: calc(var(--spacing) * 4);
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .rounded-\[0\.625rem\] {
     border-radius: 0.625rem;
   }
