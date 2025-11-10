@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const smallDisplay = document.getElementById("smallDisplay");
   const keysContainer = document.getElementById("keys");
 
-  let currentInput = "";
+  let currentInput = "399,981";
   let previousInput = "";
   let operator = "";
   let shouldResetDisplay = false;
